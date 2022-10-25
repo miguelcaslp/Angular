@@ -1,13 +1,6 @@
-<!-- As a heading -->
-<nav class="navbar navbar-light bg-light">
-  <span class="navbar-brand mb-0 h1">Hola mundo</span>
-</nav>
-
-<!-- As a link -->
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Home</a>
-</nav>
-
-
-
+<app-note [note]="{title:'test',description:'test'}"
+(editNote)="this.editingNote($event)" (removeNote)="this.removingNote($event)"></app-note>
+<app-note [note]="{id:2,title:'hola',description:'test'}"
+(editNote)="this.editingNote($event)" (removeNote)="this.removingNote($event)"></app-note>
+<app-button [clase]="'btn btn-danger'" [texto]="'Alerta'" (action)="alerta()"></app-button>
 <router-outlet></router-outlet>
