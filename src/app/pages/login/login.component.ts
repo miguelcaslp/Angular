@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-suba',
+  selector: 'app-login',
   standalone: true,
   imports: [CommonModule],
   template: `
     <p>
-      suba works!
+      login works!
     </p>
   `,
   styles: [
   ]
 })
-export class SubaComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   constructor() { }
 

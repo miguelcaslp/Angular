@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-subb',
+  selector: 'app-notes',
   standalone: true,
   imports: [CommonModule],
   template: `
     <p>
-      subb works!
+      notes works!
     </p>
   `,
   styles: [
   ]
 })
-export class SubbComponent implements OnInit {
+export class NotesComponent implements OnInit {
 
   constructor() { }
 
