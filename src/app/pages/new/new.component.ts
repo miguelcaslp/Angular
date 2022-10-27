@@ -5,13 +5,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-new',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <p>
-      new works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './new.component.html',
+  styleUrls: ['./new.component.css']
 })
 export class NewComponent implements OnInit {
 

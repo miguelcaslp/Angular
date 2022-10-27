@@ -5,13 +5,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-error404',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <p>
-      error404 works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './error404.component.html',
+  styleUrls: ['./error404.component.css']
 })
 export class Error404Component implements OnInit {
 
