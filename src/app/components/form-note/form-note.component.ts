@@ -11,23 +11,23 @@ import { INote } from 'src/app/model/INote';
   styleUrls: ['./form-note.component.css']
 })
 export class FormNoteComponent implements OnInit {
-  @Input() note!:INote;
+  @Input() note!: INote;
   @Output() onsubmit = new EventEmitter<INote>();
-  public form:FormGroup;
+  public form: FormGroup;
 
-  @ViewChild('title') title!:ElementRef;
-  public description!:String;
+  @ViewChild('title') title!: ElementRef;
+  public description!: String;
 
-  constructor(private fb:FormBuilder,) { 
+  constructor(private fb: FormBuilder,) {
     this.form = this.fb.group({
-      title: ['', [Validators.required,Validators.minLength(4) ]],
+      title: ['', [Validators.required, Validators.minLength(4)]],
       description: [''],
-      id:['']
+      id: ['']
     })
   }
 
   ngOnInit(): void {
-    if(this.note && this.note.title){
+    if (this.note && this.note.title) {
       this.form.setValue(this.note);
       /**this.form.patchValue({
         id: this.note.id,
@@ -35,12 +35,18 @@ export class FormNoteComponent implements OnInit {
 
     }
   }
-
-  submit(){
-    console.log(this.form);
-    let newNote:INote = {
+  ngOnChanges($changes: any) {
+    console.log($changes)
+    if ($changes.note && $changes.note.currentValue) {
+      this.form.setValue($changes.note.currentValue);
+    }
+  }
+  submit() {
+    //VALID
+    let newNote: INote = {
+      id: this.form.value.id,// <<-- new
       title: this.form.value.title,
-      description : this.form.value.description
+      description: this.form.value.description
     }
     this.onsubmit.emit(newNote);
     this.form.reset();
