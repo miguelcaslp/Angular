@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { INote } from 'src/app/model/INote';
 import { SharedModule } from 'src/app/components/SharedModule';
+import { HighlightDirective } from 'src/app/directives/highlight.directive';
+import { NotesService } from '../../services/notes.service';
 
 @Component({
   selector: 'app-notes',
   standalone: true,
-  imports: [CommonModule,FormsModule,SharedModule],
+  imports: [CommonModule,FormsModule,SharedModule,HighlightDirective],
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.css']
 })
@@ -22,7 +24,7 @@ export class NotesComponent implements OnInit {
     {title:'note2', description:'hola mundo'},
   ];
 
-  constructor() { }
+  constructor(public notesS:NotesService) { }
 
   ngOnInit(): void {
   }
@@ -37,7 +39,7 @@ export class NotesComponent implements OnInit {
 
   public removingNote($event:INote){
     console.log("Eliminando Nota")
-    console.log($event);
+    this.notesS.removeNote($event.id)
   }
   public editingNote($event:INote){
     console.log("Editando Nota")
