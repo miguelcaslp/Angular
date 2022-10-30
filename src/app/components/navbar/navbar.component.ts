@@ -4,17 +4,17 @@ import { RouterModule } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 
 @Component({
-selector: 'app-navbar',
-standalone: true,
-imports: [CommonModule,RouterModule],
-templateUrl: './navbar.component.html',
-styleUrls: ['./navbar.component.css']
+    selector: 'app-navbar',
+    standalone: true,
+    imports: [CommonModule, RouterModule],
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-constructor(public loginS:LoginService) { }
-ngOnInit(): void {
-}
-public logout(){
-this.loginS.signOut();
-}
+    constructor(public loginS: LoginService) { }
+    ngOnInit(): void {
+    }
+    public logout() {
+        this.loginS.signOut();
+    }
 }

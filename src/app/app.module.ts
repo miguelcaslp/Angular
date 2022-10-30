@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './components/button/button.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotesService } from './services/notes.service';
-import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { SocialLoginModule,SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
 import { LoginService } from './services/login.service';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';import { environment } from 'src/environments/environment';
 
 
 
@@ -23,6 +26,9 @@ import { LoginService } from './services/login.service';
     AppRoutingModule,
     ButtonComponent,
     NavbarComponent,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
    
   
   ],
@@ -31,12 +37,13 @@ import { LoginService } from './services/login.service';
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
-        autoLogin: true,
+        autoLogin: false,
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
               '249018397259-qn0co2qpbq11uobs32td19bqfbirpfbh.apps.googleusercontent.com'
+              
             )
           }
         ],
