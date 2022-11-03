@@ -1,0 +1,36 @@
+body{
+    background:#eee;
+}
+
+.card{
+    border:none;
+
+    position:relative;
+    overflow:hidden;
+    border-radius:8px;
+    cursor:pointer;
+}
+.social-media{
+    padding-top: 50px;
+    display: flex;
+    padding-top: 10%;
+    align-items: center;
+    align-content: center;
+}
+
+.github{
+    padding-left: 30%;
+    padding-right: 15%;
+}
+
+
+.card:hover::after{
+    transform:scaleY(1);
+}
+
+
+.fonts{
+    font-size:11px;
+}
+
+ 

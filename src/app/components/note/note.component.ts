@@ -19,11 +19,11 @@ export class NoteComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("NGONINIT");
+   
   }
 
   ngAfterContentInit(): void {
-    console.log("NGONFINAL");
+    
   }
 
   public editNoteFn(){

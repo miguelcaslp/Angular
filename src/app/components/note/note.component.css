@@ -1,0 +1,30 @@
+
+.btn-success {
+    --bs-btn-color: #247DDB;
+    --bs-btn-bg: orange;
+    --bs-btn-border-color: orange;
+    --bs-btn-hover-color: #247DDB;
+    --bs-btn-hover-bg: white;
+    --bs-btn-hover-border-color: #247DDB;
+    --bs-btn-focus-shadow-rgb: 60,153,110;
+    --bs-btn-active-color: #247DDB;
+    --bs-btn-active-bg: orange;
+    --bs-btn-active-border-color: orange;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0,0,0,0.125);
+    --bs-btn-disabled-color: #247DDB;
+    --bs-btn-disabled-bg: orange;
+    --bs-btn-disabled-border-color: orange;
+}
+
+.title{
+    width: 25%;
+}
+.description{
+    width: 50%;
+}
+.remove{
+    width: 10%;
+}
+.edit{
+    width: 10%;
+}

@@ -1,3 +1,11 @@
+<div class="menu">
+    <div class="title">
+        <a>Titulo</a>
+    </div>
+    <div class="description">
+        <a>Descripción</a>
+    </div>
+</div>
 <app-note *ngFor="let note of this.notesS.getNotes();let
 i=index;trackBy:trackByNotes" [note]="note" (editNote)="this.editingNote(note)" (removeNote)="this.removingNote(note)"
     appHighlight></app-note>
@@ -19,7 +27,7 @@ btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
                 <app-form-note [note]="_editingNote" (onsubmit)="updateNote($event)"></app-form-note>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs- dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
