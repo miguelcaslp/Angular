@@ -18,9 +18,10 @@
 
 .title{
     width: 25%;
+    margin-left: 5%;
 }
 .description{
-    width: 50%;
+    width: 45%;
 }
 .remove{
     width: 10%;

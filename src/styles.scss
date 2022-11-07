@@ -1,0 +1,111 @@
+@import "@angular/material/theming";
+@include mat-core();
+asl-google-signin-button div{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align:center;
+  }
+$mat-primary-scheme: (
+  100: white,
+  500: #61699a,
+  700: #303f9f,
+  contrast: (
+    100: black,
+    500: black,
+    700: black,
+  ),
+);
+$mat-accent-scheme: (
+  100: white,
+  500: #61699a,
+  700: #303f9f,
+  contrast: (
+    100: black,
+    500: black,
+    700: black,
+  ),
+);
+
+$mat-primary-palette: mat-palette($mat-primary-scheme);
+$mat-accent-palette: mat-palette($mat-accent-scheme);
+
+$app-light-theme: mat-light-theme($mat-primary-palette, $mat-accent-palette);
+$app-dark-theme: mat-dark-theme($mat-primary-palette, $mat-accent-palette);
+
+.light-mode {
+  @include angular-material-theme($app-light-theme);
+
+  nav{
+    background-color: rgb(23, 133, 184) !important;
+    .nav-item {
+      background-color:  rgb(23, 133, 184) !important;
+      .dropdown-menu {
+        background-color:   rgb(23, 133, 184) !important;
+        li {
+          background-color:   rgb(23, 133, 184) !important;
+        }
+      }
+    }
+  }
+  
+}
+
+.dark-mode {
+  @include angular-material-theme($app-dark-theme);
+
+
+
+  .form-control {
+    background-color: #333 !important;
+    color: white !important;
+    &input:focus {
+      color: white !important;
+    }
+    &input::placeholder {
+      color: white !important;
+    }
+  }
+
+  background-color: #333 !important;
+  color: whitesmoke;
+
+  li{
+    background-color: #333;
+    color: white;
+  }
+  nav{
+    background-color: rgb(122, 10, 156) !important;
+    .navbar-brand{
+      color:white;
+    }
+    .nav-link{
+      color:white !important;
+      background-color:  rgb(122, 10, 156) !important;
+    }
+    .nav-item {
+      background-color:  rgb(122, 10, 156) !important;
+      .dropdown-menu {
+        background-color:   rgb(122, 10, 156) !important;
+        .dropdown-item {
+          background-color:  rgb(122, 10, 156) !important;
+          color:white;
+        }
+        li {
+          background-color:   rgb(122, 10, 156) !important;
+        }
+      }
+    }
+  }
+
+  .card{
+    background-color: #333;
+  }
+
+}
+
+.dar {
+  padding-top: 10px;
+  padding-left: 90%;
+}
+
