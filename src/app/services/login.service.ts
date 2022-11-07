@@ -16,20 +16,32 @@ originalPath!:string;
 
 constructor(private authService: SocialAuthService,
   private router:Router) {
-
-  this.authService.authState.subscribe((user) => {
-    this.user = user;
-    this.loggedIn = (user != null);
-    if(this.loggedIn){
+    this.user = JSON.parse(localStorage.getItem('user')!);
+    if(this.user){
+      this.loggedIn = true;
       if(this.originalPath){
         this.router.navigate([this.originalPath]);
         this.originalPath='';
-      }else
+      }else{
         this.router.navigate(['']);
+      }
     }else{
-      this.router.navigate(['/login']);
-    }
-  });
+
+    this.authService.authState.subscribe((user) => {
+        this.user = user;
+        localStorage.setItem('user', JSON.stringify(user))
+        this.loggedIn = (user != null);
+        if(this.loggedIn){
+          if(this.originalPath){
+            this.router.navigate([this.originalPath]);
+            this.originalPath='';
+          }else
+            this.router.navigate(['']);
+        }else{
+          this.router.navigate(['/login']);
+        }
+      });
+  }
  }
 isAuth():boolean{
   return this.loggedIn;
