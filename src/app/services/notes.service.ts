@@ -8,7 +8,6 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class NotesService {
-  private dbPath = '/notes';
   notesRef!: AngularFirestoreCollection<any>;
 
   public notes: INote[] = [
@@ -19,10 +18,6 @@ export class NotesService {
     //Cargar todas las notas del servidor
     this.notesRef.get().subscribe(d => {
       let docs = d.docs;
-      /*docs.forEach(d=>{
-        let newd = {id:d.id,...d.data()}; 
-        this.notes.push(newd);
-      });*/
       this.notes = docs.map(d => {
         return { id: d.id, ...d.data() };
       });
